@@ -1,0 +1,2 @@
+module KennelOwnersHelper
+end
