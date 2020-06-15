@@ -5,5 +5,8 @@ Rails.application.routes.draw do
   resources :visits
   resources :pets
   resources :users
-  # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
+  
+  get 'users/:id/pets', to: 'users#pets', as: 'user_pets'
+  
+
 end
