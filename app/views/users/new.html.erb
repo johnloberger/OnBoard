@@ -18,6 +18,9 @@
   <%= f.label :email_address %>
   <%= f.text_field :email_address %><br>
   <br>
- 
+
+  Password: <%= f.password_field :password %>
+  Confirm Password: <%= f.password_field :password_confirmation %>
   <%= f.submit %>
+  
 <% end %>

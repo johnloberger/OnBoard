@@ -3,3 +3,7 @@
 <p><%= link_to "View Pets", user_pets_path %></p>
 <p>View my visits</p>
 <p>Schedule a visit</p>
+
+<%= form_tag ({controller: 'sessions', action: 'destroy', method: 'post'}) do %>
+  <input type=submit value='logout'>
+<% end %>
