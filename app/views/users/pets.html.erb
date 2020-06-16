@@ -1,4 +1,6 @@
 <h1>Pets</h1>
 <% @pets.each do |pet| %>
- <p> <%= pet.name %> </p>
+ <p> <%= link_to pet.name, pet_path(pet) %> </p>
 <% end %>
+
+<%= link_to "HOME", user_path(@user) %>

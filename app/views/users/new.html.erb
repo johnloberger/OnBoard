@@ -1,4 +1,4 @@
-<h1>OnBoard</h1>
+<h1>OnBoard: New User Sign Up</h1>
 
 <% if flash[:user_errors] %>
   <% flash[:user_errors].each do |error| %>
@@ -20,7 +20,11 @@
   <br>
 
   Password: <%= f.password_field :password %>
+  <br>
+  <br>
   Confirm Password: <%= f.password_field :password_confirmation %>
+
+  <br>
   <%= f.submit %>
   
 <% end %>

@@ -1,0 +1,8 @@
+<h1><%= @pet.name %></h1>
+
+<h3><%= link_to "EDIT", edit_pet_path %><h3>
+
+<h3>Age :<%= @pet.age %><h3>
+<h3>Type :<%= @pet.animal_type %><h3>
+<h3>Breed :<%= @pet.breed %><h3>
+<h3><%= link_to "HOME", user_path(@owner) %><h3>
