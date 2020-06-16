@@ -9,15 +9,16 @@ class UsersController < ApplicationController
 
   def create
     @user = User.create(user_params)
+    
     if @user.valid?
       redirect_to user_path(@user)
     else
       flash[:user_errors] = @user.errors.full_messages
       redirect_to new_user_path(@user)
     end
+
     session[:user_id] = @user.id
   end
-
 
   def pets
     @pets = @user.pets
@@ -27,11 +28,6 @@ class UsersController < ApplicationController
   def visits
     @visits = @user.visits
     render :'visits'
-  end
-
-  def new_pet
-    @pet = Pet.new
-    render :'new_pet'
   end
 
   def show

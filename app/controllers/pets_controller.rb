@@ -9,8 +9,13 @@ class PetsController < ApplicationController
 
   end
 
+  def new
+    @pet = Pet.new
+  end
+
   def create
     @pet = Pet.create(pet_params)
+    byebug
     redirect_to pet_path(@pet)
   end 
 
