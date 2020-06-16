@@ -6,7 +6,18 @@ Rails.application.routes.draw do
   resources :pets
   resources :users
   
+
+  get '/login' => 'sessions#new'
+
+  post '/login' => 'sessions#create'
+
+  post '/logout' => 'sessions#destroy'
+
+  
   get 'users/:id/pets', to: 'users#pets', as: 'user_pets'
   
+
+
+  # root 'home#show'
 
 end
