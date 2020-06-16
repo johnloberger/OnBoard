@@ -2,8 +2,8 @@
 <% @visits.each do |visit| %>
   <p>Pet: <%= visit.pet.name %></p>
   <p>Days: <%= visit.days %></p>
-  <p>Kennel: <%= visit.den.kennel.name %> </p>
-  <p>Address: <%= visit.den.kennel.address %> </p>
+  <p>Kennel: <%= visit.kennel.name %> </p>
+  <p>Address: <%= visit.kennel.address %> </p>
   <hr>
 <% end %>
 

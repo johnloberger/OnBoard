@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  get 'users/login' => 'sessions#new', as: 'users_login'
   resources :kennel_owners
   resources :kennels
   resources :dens
@@ -7,9 +8,9 @@ Rails.application.routes.draw do
   resources :users
   
   get '/', to: 'application#index'
-  get '/login' => 'sessions#new'
 
-  post '/login' => 'sessions#create'
+
+  post 'users/login' => 'sessions#create'
 
   post '/logout' => 'sessions#destroy'
 

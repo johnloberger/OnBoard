@@ -62,7 +62,7 @@ ActiveRecord::Schema.define(version: 2020_06_16_000613) do
     t.datetime "end_date"
     t.boolean "finished"
     t.integer "days"
-    t.integer "den_id"
+    t.integer "kennel_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end

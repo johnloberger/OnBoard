@@ -6,7 +6,7 @@ class CreateVisits < ActiveRecord::Migration[6.0]
       t.datetime :end_date
       t.boolean :finished
       t.integer :days
-      t.integer :den_id
+      t.integer :kennel_id
 
       t.timestamps
     end

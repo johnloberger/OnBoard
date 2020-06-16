@@ -1,6 +1,6 @@
 class Visit < ApplicationRecord
 
   belongs_to :pet
-  belongs_to :den
-  
+  belongs_to :kennel
+
 end
