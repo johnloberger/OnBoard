@@ -7,6 +7,12 @@
 <% end %>
 
 <%= form_for @user do |f| %>
+
+  <div class="form-group">
+  <%= f.label 'Type of Account', class: 'form-text text-muted'%>
+  <%= f.select :type, ['Customer', 'Kennel Owner'] %>
+  </div>
+
   <div class="form-group">
   <%= f.label :name, class: 'form-text text-muted'%>
   <%= f.text_field :name, class: 'form-text text-muted' %>

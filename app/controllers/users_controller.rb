@@ -16,22 +16,10 @@ class UsersController < ApplicationController
       flash[:user_errors] = @user.errors.full_messages
       redirect_to new_user_path(@user)
     end
-
+    byebug
     session[:user_id] = @user.id
   end
-
-  def pets
-    @pets = @user.pets
-    render :'pets'
-  end
-
-  def visits
-    @visits = @user.visits
-    render :'visits'
-  end
-
-  def show
-  end
+  
 
   private
 

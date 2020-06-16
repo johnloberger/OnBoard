@@ -1,11 +1,12 @@
 Rails.application.routes.draw do
   get 'users/login' => 'sessions#new', as: 'users_login'
-  resources :kennel_owners
   resources :kennels
   resources :dens
   resources :visits
   resources :pets
   resources :users
+  resources :customer_users
+  resources :kennel_owner_users
   
   get '/', to: 'application#index'
 
