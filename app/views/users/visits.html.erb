@@ -1,0 +1,10 @@
+<p class="display-1">Visits</p>
+<% @visits.each do |visit| %>
+  <p>Pet: <%= visit.pet.name %></p>
+  <p>Days: <%= visit.days %></p>
+  <p>Kennel: <%= visit.den.kennel.name %> </p>
+  <p>Address: <%= visit.den.kennel.address %> </p>
+  <hr>
+<% end %>
+
+<%= link_to "Back", user_path(@user), class: 'btn btn-primary btn-lg' %>

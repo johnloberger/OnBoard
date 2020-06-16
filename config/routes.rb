@@ -15,9 +15,10 @@ Rails.application.routes.draw do
 
   
   get 'users/:id/pets', to: 'users#pets', as: 'user_pets'
+  get 'users/:id/pets/new', to: 'users#new_pet', as: 'user_new_pet'
+  get 'users/:id/visits', to: 'users#visits', as: 'user_visits'
   
-
-
+  
   # root 'home#show'
 
 end

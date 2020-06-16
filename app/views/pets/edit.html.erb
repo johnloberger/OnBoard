@@ -1,23 +1,27 @@
-<h1>Edit</h1>
+<h1 class="display-1">Edit</h1>
 
 <%= form_for @pet do |f| %>
-  <%= f.label :name %>
-  <%= f.text_field :name %><br>
-  <br>
+  <div class="form-group">
+  <%= f.label :name , class: 'form-text text-muted'%>
+  <%= f.text_field :name , class: 'form-text text-muted'%>
+  </div>
   
-  <%= f.label :age %>
-  <%= f.text_field :age %><br>
-  <br>
+  <div class="form-group">
+  <%= f.label :age , class: 'form-text text-muted'%>
+  <%= f.text_field :age , class: 'form-text text-muted'%>
+  </div>
 
-  <%= f.label :animal_type %>
-  <%= f.text_field :animal_type %><br>
-  <br>
+  <div class="form-group">
+  <%= f.label :animal_type , class: 'form-text text-muted'%>
+  <%= f.text_field :animal_type , class: 'form-text text-muted'%>
+  </div>
 
-  <%= f.label :breed %>
-  <%= f.text_field :breed %><br>
-  <br>
+  <div class="form-group">
+  <%= f.label :breed , class: 'form-text text-muted'%>
+  <%= f.text_field :breed , class: 'form-text text-muted'%>
+  </div>
 
   <br>
-  <%= f.submit %>
+  <%= f.submit class: 'btn btn-primary btn-lg'%>
   
 <% end %>

@@ -1,17 +1,21 @@
-<h1>OnBoard: Current User Log in</h1>
+<p class="display-1">OnBoard </p>
+
+
 
 <%= form_for @user, url: login_path, method: :post do |f| %>
-  <%= f.label :email_address %>
-  <%= f.text_field :email_address %>
-  <br>
-  <br>
+  <div class="form-group">
+  <%= f.label :email_address, class: 'form-text text-muted' %>
+  <%= f.text_field :email_address, class: 'form-text text-muted'%>
+  <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+  </div>
+  
+  <div class="form-group">
+  <%= f.label :password , class: 'form-text text-muted' %>
+  <%= f.password_field :password, class: 'form-text text-muted' %>
+  </div>
+  
 
-  <%= f.label :password %>
-  <%= f.password_field :password %>
-  <br>
-  <br>
-
-  <%= f.submit "log in" %>
+  <%= f.submit "log in" , class: 'btn btn-primary btn-lg'%>
   <br>
   <br>
   Or <%= link_to(controller: 'users', action: 'new') { 'sign up' } %>

@@ -9,6 +9,11 @@ class PetsController < ApplicationController
 
   end
 
+  def create
+    @pet = Pet.create(pet_params)
+    redirect_to pet_path(@pet)
+  end 
+
   def update
     @pet.update(pet_params)
     redirect_to pet_path(@pet)
@@ -21,6 +26,6 @@ class PetsController < ApplicationController
   end 
 
   def pet_params
-    params.require(:pet).permit(:name, :age, :animal_type, :breed)
+    params.require(:pet).permit(:name, :age, :animal_type, :breed, :user_id)
   end
 end

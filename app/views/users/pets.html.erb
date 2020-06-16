@@ -1,6 +1,13 @@
-<h1>Pets</h1>
+<h1 class="display-1">Pets</h1>
 <% @pets.each do |pet| %>
- <p> <%= link_to pet.name, pet_path(pet) %> </p>
+ <%= link_to pet.name, pet_path(pet), class: 'btn btn-info btn-lg' %>
+ <br>
+ <br>
 <% end %>
 
-<%= link_to "HOME", user_path(@user) %>
+<hr>
+
+<%= link_to "Add pet", user_new_pet_path, class: 'btn btn-primary btn-lg' %>
+<br>
+<br>
+<%= link_to "Back", user_path(@user), class: 'btn btn-primary btn-lg' %>

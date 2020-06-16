@@ -1,4 +1,4 @@
-<h1>OnBoard: New User Sign Up</h1>
+<p class="display-1">OnBoard</p>
 
 <% if flash[:user_errors] %>
   <% flash[:user_errors].each do |error| %>
@@ -7,24 +7,32 @@
 <% end %>
 
 <%= form_for @user do |f| %>
-  <%= f.label :name %>
-  <%= f.text_field :name %><br>
-  <br>
+  <div class="form-group">
+  <%= f.label :name, class: 'form-text text-muted'%>
+  <%= f.text_field :name, class: 'form-text text-muted' %>
+  </div>
   
-  <%= f.label :age %>
-  <%= f.text_field :age %><br>
-  <br>
+  <div class="form-group">
+  <%= f.label :age, class: 'form-text text-muted' %>
+  <%= f.text_field :age, class: 'form-text text-muted' %>
+  </div>
 
-  <%= f.label :email_address %>
-  <%= f.text_field :email_address %><br>
-  <br>
+  <div class="form-group">
+  <%= f.label :email_address, class: 'form-text text-muted' %>
+  <%= f.text_field :email_address, class: 'form-text text-muted' %>
+  </div>
 
-  Password: <%= f.password_field :password %>
-  <br>
-  <br>
-  Confirm Password: <%= f.password_field :password_confirmation %>
+  <div class="form-group">
+  <%= f.label "Password", class: 'form-text text-muted' %>
+  <%= f.password_field :password, class: 'form-text text-muted' %>
+  </div>
 
-  <br>
-  <%= f.submit %>
+  <div class="form-group">
+  <%= f.label "Confirm Password", class: 'form-text text-muted' %>
+  <%= f.password_field :password_confirmation, class: 'form-text text-muted' %>
+  </div>
   
+  <%= f.submit class: 'btn btn-primary' %> 
+  
+
 <% end %>

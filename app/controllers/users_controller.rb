@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-  before_action :find_user, only: [:show, :pets]
+  before_action :find_user, only: [:show, :pets, :visits, :new_dog]
   before_action :require_logged_in
   skip_before_action :require_logged_in, only: [:new, :create]
   
@@ -22,6 +22,16 @@ class UsersController < ApplicationController
   def pets
     @pets = @user.pets
     render :'pets'
+  end
+
+  def visits
+    @visits = @user.visits
+    render :'visits'
+  end
+
+  def new_pet
+    @pet = Pet.new
+    render :'new_pet'
   end
 
   def show

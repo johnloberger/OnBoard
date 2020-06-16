@@ -1,9 +1,14 @@
-<h1>Welcome <%= @user.name %></h1>
+<h1 class="display-1">Welcome <%= @user.name %> </h1>
 
-<p><%= link_to "View Pets", user_pets_path %></p>
-<p>View my visits</p>
-<p>Schedule a visit</p>
-
+<%= link_to "View Pets", user_pets_path, class: 'btn btn-success btn-lg' %>
+<br>
+<br>
+<%= link_to "View my visits", user_visits_path, class: 'btn btn-success btn-lg' %>
+<br>
+<br>
+<%= link_to "Schedule a visit", new_visit_path, class: 'btn btn-success btn-lg' %>
+<br>
+<br>
 <%= form_tag ({controller: 'sessions', action: 'destroy', method: 'post'}) do %>
-  <input type=submit value='logout'>
+  <input type=submit value='logout' class="btn btn-danger btn-lg">
 <% end %>
