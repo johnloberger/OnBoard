@@ -10,19 +10,11 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_06_16_000613) do
+ActiveRecord::Schema.define(version: 2020_06_15_202245) do
 
   create_table "dens", force: :cascade do |t|
-    t.integer "visit_id"
+    t.integer "den_number"
     t.integer "kennel_id"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-  end
-
-  create_table "kennel_owners", force: :cascade do |t|
-    t.string "name"
-    t.integer "age"
-    t.string "email_address"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
@@ -51,9 +43,10 @@ ActiveRecord::Schema.define(version: 2020_06_16_000613) do
     t.string "name"
     t.integer "age"
     t.string "email_address"
+    t.string "password_digest"
+    t.string "type"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.string "password_digest"
   end
 
   create_table "visits", force: :cascade do |t|
@@ -63,6 +56,7 @@ ActiveRecord::Schema.define(version: 2020_06_16_000613) do
     t.boolean "finished"
     t.integer "days"
     t.integer "kennel_id"
+    t.integer "den_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end

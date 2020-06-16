@@ -1,0 +1,8 @@
+class KennelOwnerUsersController < ApplicationController
+
+
+
+
+
+  
+end
