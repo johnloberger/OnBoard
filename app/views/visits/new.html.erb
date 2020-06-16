@@ -1,0 +1,24 @@
+<p class="display-1">Schedule A New Visit</p>
+
+<%= form_for @visit do |f| %>
+  <div class="form-group">
+  <%= f.label 'Pet', class: 'form-text text-muted'%>
+  <%= collection_select(:visit, :pet_id, @pets, :id, :name) %>
+  </div>
+  
+  <div class="form-group">
+  <%= f.label 'Kennel Den', class: 'form-text text-muted' %>
+  <%= collection_select(:visit, :kennel_id, Kennel.all, :id, :name) %>
+  </div>
+
+  <div class="form-group">
+  <%= f.label :Days, class: 'form-text text-muted' %>
+  <%= f.text_field :days, class: 'form-text text-muted' %>
+  </div>
+
+  <%= f.hidden_field :finished, value: false%>
+
+  <%= f.submit class: 'btn btn-primary btn-lg' %> 
+  
+  <% end %>
+

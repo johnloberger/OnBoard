@@ -2,7 +2,7 @@
 
 
 
-<%= form_for @user, url: login_path, method: :post do |f| %>
+<%= form_for @user, url: users_login_path, method: :post do |f| %>
   <div class="form-group">
   <%= f.label :email_address, class: 'form-text text-muted' %>
   <%= f.text_field :email_address, class: 'form-text text-muted'%>
