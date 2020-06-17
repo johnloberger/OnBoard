@@ -5,7 +5,7 @@ class CreateKennels < ActiveRecord::Migration[6.0]
       t.string :address
       t.integer :rate
       t.integer :capacity
-      t.integer :kennel_owner_id
+      t.integer :user_id
 
       t.timestamps
     end

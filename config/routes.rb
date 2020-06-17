@@ -16,7 +16,7 @@ Rails.application.routes.draw do
   post '/logout' => 'sessions#destroy'
 
   
-  get 'users/:id/pets', to: 'users#pets', as: 'user_pets'
+  get 'customer_users/:id/pets', to: 'customer_users#pets', as: 'customer_user_pets'
   get 'users/:id/pets/new', to: 'users#new_pet', as: 'user_new_pet'
   get 'users/:id/visits', to: 'users#visits', as: 'user_visits'
   
