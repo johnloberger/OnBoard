@@ -1,10 +1,14 @@
 <p class="display-1">Visits</p>
-<% @visits.each do |visit| %>
-  <p>Pet: <%= visit.pet.name %></p>
-  <p>Days: <%= visit.days %></p>
-  <p>Kennel: <%= visit.kennel.name %> </p>
-  <p>Address: <%= visit.kennel.address %> </p>
-  <hr>
+<% if @visits.empty? %>
+  <h3>You have no visits. Please schedule one!</h3>
+<% else %>
+  <% @visits.each do |visit| %>
+      <p>Pet: <%= visit.pet.name %></p>
+      <p>Days: <%= visit.days %></p>
+      <p>Kennel: <%= visit.kennel.name %> </p>
+      <p>Address: <%= visit.kennel.address %> </p>
+    <hr>
+  <% end %>
 <% end %>
 
 <%= link_to "Back", customer_user_path(@user), class: 'btn btn-primary btn-lg' %>
