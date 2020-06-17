@@ -38,6 +38,18 @@ class KennelsController < ApplicationController
     redirect_to kennel_owner_user_kennel_path(@kennel)
   end
 
+  def destroy
+    @kennel = Kennel.find(params[:id])
+    visits = @kennel.visits
+    byebug
+    visits.each {|v| v.destroy}
+    dens = @kennel.dens
+    dens.each {|d| d.destroy}
+    @kennel.destroy
+    byebug
+    redirect_to kennel_owner_user_kennels_path
+  end
+
   private
 
   def kennel_params

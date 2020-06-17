@@ -15,6 +15,7 @@ Rails.application.routes.draw do
 
   get 'customer_users/:id/pets/pet', to: 'pets#show', as: 'customer_user_pet'
   post 'customer_users/:id/my_pet' => 'pets#show'
+  get 'customer_users/:id/pets/pet/delete', to: 'pets#destroy', as: 'delete_pet'
 
   get 'customer_users/:id/pets/new', to: 'pets#new', as: 'customer_user_new_pet'
   get 'customer_users/:id/visits', to: 'customer_users#visits', as: 'customer_user_visits'
@@ -25,6 +26,7 @@ Rails.application.routes.draw do
   get 'kennel_owner_users/:id/kennels/kennel', to: 'kennels#show', as: 'kennel_owner_user_kennel'
   get 'kennel_owner_users/:id/kennel/new', to: 'kennels#new', as: 'kennel_owner_user_new_kennel'
   get 'kennel_owner_users/:id/kennel/dens', to: 'kennels#dens', as: 'kennel_dens'
+  get 'kennel_owner_users/:id/kennel/delete', to: 'kennels#destroy', as: 'delete_kennel'
 
   resources :kennels
   resources :dens

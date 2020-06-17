@@ -25,6 +25,12 @@ class PetsController < ApplicationController
     redirect_to customer_user_pet_path(@pet)
   end
 
+  def destroy
+    find_pet
+    @pet.destroy
+    redirect_to customer_user_pets_path
+  end
+
   private
 
   def find_pet
