@@ -2,7 +2,7 @@ class PetsController < ApplicationController
   before_action :find_pet, only: [:show, :edit, :update]
 
   def show
-    @owner = @pet.user
+    @owner = @pet.customer_user
   end
 
   def edit
