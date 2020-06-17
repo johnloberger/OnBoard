@@ -3,13 +3,28 @@ class KennelsController < ApplicationController
   def new
     @kennel = Kennel.new
   end
-
+  
   def create
     @kennel = Kennel.create(kennel_params)
-    byebug
+    create_dens
     redirect_to kennel_owner_user_kennel_path(@kennel)
   end
+  
+  def create_dens
+    @kennel = Kennel.all.last
+    count = 1
+    @kennel.capacity.times do 
+      Den.create(den_number: count, kennel_id: @kennel.id)
+      count += 1
+    end
+  end
 
+  def dens 
+    @kennel = Kennel.find(params[:id])
+
+    @dens = @kennel.dens
+
+  end
 
   def show
     @kennel = Kennel.find(params[:id])
