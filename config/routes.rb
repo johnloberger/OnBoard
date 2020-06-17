@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  get 'users/login' => 'sessions#new', as: 'users_login'
+  get '/login' => 'sessions#new', as: 'users_login'
   resources :kennels
   resources :dens
   resources :visits
@@ -10,8 +10,9 @@ Rails.application.routes.draw do
   
   get '/', to: 'application#index'
 
+  get '/signup', to: 'sessions#signup', as: 'signup'
 
-  post 'users/login' => 'sessions#create'
+  post '/login' => 'sessions#create'
 
   post '/logout' => 'sessions#destroy'
 
