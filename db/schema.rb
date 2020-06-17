@@ -34,7 +34,7 @@ ActiveRecord::Schema.define(version: 2020_06_15_202245) do
     t.integer "age"
     t.string "animal_type"
     t.string "breed"
-    t.integer "customer_user_id"
+    t.integer "user_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end

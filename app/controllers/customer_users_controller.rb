@@ -25,15 +25,13 @@ class CustomerUsersController < ApplicationController
   end
 
   def pets
-    @customer = CustomerUser.find(params[:id])
+    @customer = @user
     @pets = @customer.pets	   
-    render :'pets'
   end
 
   def visits 
     @customer = User.find(params[:id])
     @visits = @customer.visits
-    render :'visits'
   end
 
   private

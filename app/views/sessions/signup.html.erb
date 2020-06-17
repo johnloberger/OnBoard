@@ -1,9 +1,8 @@
-Please Choose The Account Type You Wish To Create
-<br>
-<br>
+<p class="display-4">OnBoard</p>
+<p>Please Choose The Account Type You Wish To Create</p>
 
-<%= link_to(controller: 'customer_users', action: 'new') { 'CUSTOMER' } %>
-<br>
-<br>
-<br>
-<%= link_to(controller: 'kennel_owner_users', action: 'new') { 'KENNEL OWNERS' } %>
+<%= link_to "CUSTOMER", { :controller => :customer_users, :action => :new }, { class: "btn btn-success btn-lg" } %>
+<br>  
+<br>  
+
+<%= link_to "KENNEL OWNER", { :controller => :kennel_owner_users, :action => :new }, { class: "btn btn-primary btn-lg" } %>

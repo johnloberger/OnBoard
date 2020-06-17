@@ -1,0 +1,13 @@
+<h1 class="display-1">Welcome <%= @owner.name %> </h1>
+
+<%= link_to "View Kennels", kennel_owner_user_kennels_path, class: 'btn btn-success btn-lg' %>
+<br>
+<br>
+
+<%= link_to "Schedule a visit", new_visit_path, class: 'btn btn-success btn-lg' %>
+
+<%= form_tag ({controller: 'sessions', action: 'destroy', method: 'post'}) do %>
+  <br>
+  <input type=submit value='logout' class="btn btn-danger btn-lg">
+<% end %>
+

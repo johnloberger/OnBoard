@@ -1,24 +1,24 @@
 <p class="display-1">OnBoard</p>
 
-<%= form_for @pet do |f| %>
+<%= form_for @kennel do |f| %>
   <div class="form-group">
   <%= f.label :name, class: 'form-text text-muted'%>
   <%= f.text_field :name, class: 'form-text text-muted' %>
   </div>
   
   <div class="form-group">
-  <%= f.label :age, class: 'form-text text-muted' %>
-  <%= f.text_field :age, class: 'form-text text-muted' %>
+  <%= f.label :address, class: 'form-text text-muted' %>
+  <%= f.text_field :address, class: 'form-text text-muted' %>
   </div>
 
   <div class="form-group">
-  <%= f.label :animal_type, class: 'form-text text-muted' %>
-  <%= f.text_field :animal_type, class: 'form-text text-muted' %>
+  <%= f.label :rate, class: 'form-text text-muted' %>
+  <%= f.text_field :rate, class: 'form-text text-muted' %>
   </div>
 
   <div class="form-group">
-  <%= f.label :breed, class: 'form-text text-muted' %>
-  <%= f.text_field :breed, class: 'form-text text-muted' %>
+  <%= f.label :capacity, class: 'form-text text-muted' %>
+  <%= f.text_field :capacity, class: 'form-text text-muted' %>
   </div>
 
   <%= f.hidden_field :user_id, value: @user.id%>

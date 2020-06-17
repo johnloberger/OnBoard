@@ -17,8 +17,16 @@ class KennelOwnerUsersController < ApplicationController
     end
     session[:user_id] = @kennel_owner.id
   end
-  
 
+  def show
+    @owner = KennelOwnerUser.find(params[:id])
+  end
+
+  def kennels
+    @owner = @user
+    @kennels = @owner.kennels
+  end
+  
   private
 
   def user_params

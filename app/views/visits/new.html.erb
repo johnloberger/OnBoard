@@ -7,7 +7,7 @@
   </div>
   
   <div class="form-group">
-  <%= f.label 'Kennel Den', class: 'form-text text-muted' %>
+  <%= f.label 'Kennel', class: 'form-text text-muted' %>
   <%= collection_select(:visit, :kennel_id, Kennel.all, :id, :name) %>
   </div>
 
