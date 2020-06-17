@@ -1,12 +1,12 @@
 class PetsController < ApplicationController
   before_action :find_pet, only: [:show, :edit, :update]
 
+
   def show
     @owner = @pet.customer_user
   end
 
   def edit
-
   end
 
   def new
@@ -14,13 +14,15 @@ class PetsController < ApplicationController
   end
 
   def create
+    current_user
     @pet = Pet.create(pet_params)
-    redirect_to pet_path(@pet)
+    redirect_to customer_user_pet_path(@pet)
   end 
 
   def update
+    current_user
     @pet.update(pet_params)
-    redirect_to pet_path(@pet)
+    redirect_to customer_user_pet_path(@pet)
   end
 
   private
@@ -30,6 +32,6 @@ class PetsController < ApplicationController
   end 
 
   def pet_params
-    params.require(:pet).permit(:name, :age, :animal_type, :breed, :user_id)
+    params.require(:pet).permit(:name, :age, :animal_type, :breed, :customer_user_id)
   end
 end
