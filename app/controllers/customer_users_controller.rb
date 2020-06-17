@@ -11,9 +11,8 @@ class CustomerUsersController < ApplicationController
       redirect_to customer_user_path(@customer)
     else
       flash[:user_errors] = @customer.errors.full_messages
-      redirect_to new_user_path(@customer)
+      redirect_to new_customer_user_path(@customer)
     end
-    byebug
     session[:user_id] = @customer.id
   end
 

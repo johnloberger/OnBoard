@@ -7,14 +7,13 @@ class KennelOwnerUsersController < ApplicationController
   def create
     @kennel_owner = KennelOwnerUser.create(user_params)
     
-    if @user.valid?
-      redirect_to user_path(@user)
+    if @kennel_owner.valid?
+      redirect_to kennel_owner_user_path(@kennel_owner)
     else
-      flash[:user_errors] = @user.errors.full_messages
-      redirect_to new_user_path(@user)
+      flash[:user_errors] = @kennel_owner.errors.full_messages
+      redirect_to new_kennel_owner_user_path(@kennel_owner)
     end
-    byebug
-    session[:user_id] = @user.id
+    session[:user_id] = @kennel_owner.id
   end
   
 
