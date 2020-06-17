@@ -1,11 +1,11 @@
 <h1 class="display-1"> <%= @kennel.name %> Dens</h1>
-<h3><%= link_to "Back",  kennel_owner_user_kennels_path ,class: 'btn btn-primary btn-lg'%><h3>
+<h3><%= link_to "Back",  kennel_owner_user_kennels_path ,class: 'btn btn-primary btn-lg'%></h3>
 <hr>
 <% @dens.each do |den| %>
   <% if den.occupied == true %>
-    <p>Den <%= link_to den.den_number, den_path(den), class: 'btn btn-danger btn-lg' %></p>
+    <p type="button" class="btn btn-danger btn-lg"> Den <%= link_to den.den_number, den_path(den) %> </p>
   <% else %>
-    <p>Den <%= link_to den.den_number, den_path(den), class: 'btn btn-success btn-lg' %></p>
+    <p> Den <%= link_to den.den_number, den_path(den), class: 'btn btn-success btn-lg' %></p>
   <% end %>
 
  <br>
