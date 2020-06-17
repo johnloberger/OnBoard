@@ -9,6 +9,8 @@ Rails.application.routes.draw do
   get 'kennel_owner_users/:id/kennels/kennel', to: 'kennels#show', as: 'kennel_owner_user_kennel'
   get 'kennel_owner_users/:id/kennel/new', to: 'kennels#new', as: 'kennel_owner_user_new_kennel'
 
+  get 'kennel_owner_users/:id/kennel/dens', to: 'kennels#dens', as: 'kennel_dens'
+
   resources :kennels
   resources :dens
   resources :visits

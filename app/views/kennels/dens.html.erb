@@ -1,0 +1,6 @@
+<h1 class="display-1"> <%= @kennel.name %> Dens</h1>
+<% @dens.each do |den| %>
+ <p>Den <%= link_to den.den_number, den_path(den), class: 'btn btn-info btn-lg' %></p>
+ <br>
+ <br>
+<% end %>

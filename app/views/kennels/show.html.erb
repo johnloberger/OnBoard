@@ -1,5 +1,7 @@
 <h1 class="display-1"><%= @kennel.name %></h1>
 
+<h3><%= link_to "View Dens", kennel_dens_path, class: 'btn btn-primary btn-lg'%><h3>
+
 <p> Address: <%= @kennel.address %><p>
 <p> Rate: <%= @kennel.rate %><p>
 <p> Capacity: <%= @kennel.capacity %><p>
