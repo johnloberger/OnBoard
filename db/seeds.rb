@@ -4,6 +4,7 @@ CustomerUser.destroy_all
 KennelOwnerUser.destroy_all
 Pet.destroy_all
 Kennel.destroy_all
+Den.destroy_all
 
 10.times do 
   '********************** USERS ******************'

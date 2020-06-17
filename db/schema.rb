@@ -15,6 +15,8 @@ ActiveRecord::Schema.define(version: 2020_06_15_202245) do
   create_table "dens", force: :cascade do |t|
     t.integer "den_number"
     t.integer "kennel_id"
+    t.integer "pet_id"
+    t.boolean "occupied", default: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end

@@ -1,0 +1,7 @@
+<p class="display-4">Den:<%= @den.den_number %></p>
+<br>
+<p>Pet Name: <%= @pet.name %></p>
+<p>Pet Owner: <%= @pet.customer_user.name %></p>
+<p>Length of Stay: <%= @visit.days %></p>
+
+<h3><%= link_to "Back", :back ,class: 'btn btn-primary btn-lg'%><h3>

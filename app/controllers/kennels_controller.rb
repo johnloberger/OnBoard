@@ -21,9 +21,7 @@ class KennelsController < ApplicationController
 
   def dens 
     @kennel = Kennel.find(params[:id])
-
     @dens = @kennel.dens
-
   end
 
   def show
