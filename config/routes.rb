@@ -1,5 +1,10 @@
 Rails.application.routes.draw do
   get '/login' => 'sessions#new', as: 'users_login'
+  get 'customer_users/:id/pets', to: 'customer_users#pets', as: 'customer_user_pets'
+  get 'customer_users/:id/pets/pet', to: 'pets#show', as: 'customer_user_pet'
+  get 'customer_users/:id/pets/new', to: 'pets#new', as: 'customer_user_new_pet'
+  get 'customer_users/:id/visits', to: 'customer_users#visits', as: 'customer_user_visits'
+  
   resources :kennels
   resources :dens
   resources :visits
@@ -16,10 +21,7 @@ Rails.application.routes.draw do
 
   post '/logout' => 'sessions#destroy'
 
-  
-  get 'customer_users/:id/pets', to: 'customer_users#pets', as: 'customer_user_pets'
-  get 'users/:id/pets/new', to: 'users#new_pet', as: 'user_new_pet'
-  get 'users/:id/visits', to: 'users#visits', as: 'user_visits'
+  post 'customer_users/:id/my_pet' => 'pets#show'
   
   
   # root 'home#show'

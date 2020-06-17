@@ -1,12 +1,12 @@
 class SessionsController < ApplicationController 
 
   def new
-      
+    
   end
-
+  
   def signup
   end
-
+  
   def create
     user = User.find_by(email_address: params[:user][:email_address])
     user = user.try(:authenticate, params[:user][:password])

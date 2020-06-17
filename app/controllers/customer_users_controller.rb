@@ -1,4 +1,7 @@
 class CustomerUsersController < ApplicationController
+  before_action :require_logged_in
+  # before_action :find_customer, only: [:show, :pets]
+  skip_before_action :require_logged_in, only: [:new, :create]
 
   def new
     @customer = CustomerUser.new
@@ -8,6 +11,7 @@ class CustomerUsersController < ApplicationController
     @customer = CustomerUser.create(user_params)
     
     if @customer.valid?
+      @customer.save
       redirect_to customer_user_path(@customer)
     else
       flash[:user_errors] = @customer.errors.full_messages
@@ -38,6 +42,9 @@ class CustomerUsersController < ApplicationController
     params.require(:customer_user).permit(:name, :age, :email_address, :password, :password_confirmation)
   end
 
+  # def find_customer
+  #   @customer = CustomerUser.find(params[:id])
+  # end
 
 
 end
