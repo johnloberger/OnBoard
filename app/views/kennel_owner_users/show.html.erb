@@ -1,15 +1,26 @@
 <h3 class="display-4">Hello <%= @owner.name%> </h3>
-<hr>
+
 <%= link_to "Manage Your Kennels", kennel_owner_user_kennels_path, class: 'btn btn-primary btn-lg' %>
 <br>
 <br>
 <%= link_to "View Your Customers", kennel_owner_customers_path, class: 'btn btn-primary btn-lg' %>
 <br>
-<br>
-<p>You have: <%= @owner.kennels.count.to_s %> kennels, with a total of: <%= @all_dens %> dens. </p>
-<p>You have: <%= @visits.count.to_s %> active reservations. </p>
+
+<hr>
+
+<% if @owner.kennels.empty? %>  
+  <p>You have no active kennels </p>
+<% else %>
+  <p>You have: <%= @owner.kennels.count.to_s %> kennels, with a total of: <%= @all_dens %> dens. </p>
+<% end %>
+
+<% if @visits == 0 %>
+  <p>You have no active reservations </p>
+<% else %>
+  <p>You have: <%= @visits.count.to_s %> active reservations. </p>
+<% end %>
+
 <%= form_tag ({controller: 'sessions', action: 'destroy', method: 'post'}) do %>
-  <br>
   <input type=submit value='logout' class="btn btn-danger btn-lg">
 <% end %>
 
