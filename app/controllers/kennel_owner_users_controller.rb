@@ -20,11 +20,16 @@ class KennelOwnerUsersController < ApplicationController
 
   def show
     @owner = KennelOwnerUser.find(params[:id])
+    @kennels = @owner.kennels
+    @dens = @owner.dens
+    @all_dens = @dens.count {|d| d.den_number}
+    @visits = @kennels.sum {|s| s.visit_ids}
   end
 
   def kennels
     @owner = @user
     @kennels = @owner.kennels
+    
   end
   
   private

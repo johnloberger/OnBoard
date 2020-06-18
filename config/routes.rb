@@ -27,6 +27,7 @@ Rails.application.routes.draw do
   get 'kennel_owner_users/:id/kennel/new', to: 'kennels#new', as: 'kennel_owner_user_new_kennel'
   get 'kennel_owner_users/:id/kennel/dens', to: 'kennels#dens', as: 'kennel_dens'
   get 'kennel_owner_users/:id/kennel/delete', to: 'kennels#destroy', as: 'delete_kennel'
+  get 'kennel_owner_users/:id/customers', to: 'kennel_owner_users#customers', as: 'kennel_owner_customers'
 
   resources :kennels
   resources :dens
