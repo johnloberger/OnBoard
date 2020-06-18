@@ -1,15 +1,22 @@
-<h3 class="display-1"> <%= @kennel.name %> Dens</h3>
-<h3><%= link_to "Back",  kennel_owner_user_kennels_path ,class: 'btn btn-info btn-sm'%></h3>
-<hr>
+<style>
+.columns {
+  column-count: 2;
+  width: 33.33%;
+}
+</style>
 
+<h3 class="display-4"> <%= @kennel.name %> Dens</h4>
+
+<h3><%= link_to "Back",  kennel_owner_user_kennels_path ,class: 'btn btn-primary btn-lg'%></h3>
+<hr>
+<div class="columns">
 <% @dens.each do |den| %>
   <% if den.occupied == true %>
     <p><%= link_to 'Den ' + den.den_number.to_s, den_path(den) ,class: 'btn btn-secondary btn-lg' %> </p>
   <% else %>
     <p><%= link_to 'Den ' + den.den_number.to_s, den_path(den) ,class: 'btn btn-success btn-lg' %> </p>
   <% end %>
-
  <br>
  <br>
- 
 <% end %>
+</div>

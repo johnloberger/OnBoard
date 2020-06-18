@@ -1,4 +1,5 @@
-<p class="display-1">Customer Sign-Up</p>
+<p class="display-4">Customer Sign-Up</p>
+<hr>
 
 <% if flash[:user_errors] %>
   <% flash[:user_errors].each do |error| %>
@@ -33,7 +34,7 @@
   <%= f.password_field :password_confirmation, class: 'form-text text-muted' %>
   </div>
   
-  <%= f.submit 'Submit', class: 'btn btn-primary' %> 
+  <%= f.submit 'Submit', class: 'btn btn-primary btn-lg' %> 
   <br>
   <br>
   <p>Or <%= link_to(controller: 'sessions', action: 'new') { 'sign in' } %> <p>

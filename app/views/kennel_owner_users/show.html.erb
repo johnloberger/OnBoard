@@ -1,10 +1,7 @@
-<h3 class="display-1">Hello <%= @owner.name%> </h3>
+<h3 class="display-4">Hello <%= @owner.name%> </h3>
 <hr>
 <%= link_to "View Your Kennels", kennel_owner_user_kennels_path, class: 'btn btn-success btn-lg' %>
 <br>
-<br>
-
-<%= link_to "Schedule a visit", new_visit_path, class: 'btn btn-success btn-lg' %>
 
 <%= form_tag ({controller: 'sessions', action: 'destroy', method: 'post'}) do %>
   <br>

@@ -1,11 +1,15 @@
-<h1 class="display-1"><%= @pet.name %></h1>
+<h1 class="display-4"><%= @pet.name %></h1>
 
-<p> Age: <%= @pet.age %><p>
-<p> Type: <%= @pet.animal_type %><p>
-<p> Breed: <%= @pet.breed %><p>
+<h3><%= link_to "Back", customer_user_pets_path(@owner) ,class: 'btn btn-primary btn-lg'%></h3>
+<h3><%= link_to "Edit", edit_pet_path, class: 'btn btn-primary btn-lg'%></h3>
+<h3><%= link_to "Delete", delete_pet_path,data: {confirm: "Are you sure you want to delete #{@pet.name}?"}, class: 'btn btn-danger btn-lg'%></h3>
 <hr>
-<h3><%= link_to "Edit", edit_pet_path, class: 'btn btn-primary btn-lg'%><h3>
 
-<h3><%= link_to "Delete", delete_pet_path,data: {confirm: "Are you sure you want to delete #{@pet.name}?"}, class: 'btn btn-primary btn-lg'%><h3>
+<p> Age: <%= @pet.age %></p>
+<p> Type: <%= @pet.animal_type %></p>
+<p> Breed: <%= @pet.breed %></p>
 
-<h3><%= link_to "Back", customer_user_pets_path(@owner) ,class: 'btn btn-primary btn-lg'%><h3>
+
+
+
+

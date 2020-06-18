@@ -1,8 +1,6 @@
-<p class="display-1">Schedule A New Visit</p>
-
-<%= month_calendar(attribute: :start_date, end_attribute: :end_date) do |date| %>
-  <%= date.day %>
-<% end %>
+<p class="display-4">Schedule A New Visit</p>
+<%= link_to "Back", customer_user_path(@user), class: 'btn btn-primary btn-lg' %>
+<hr>
 
 <%= form_for @visit do |f| %>
   <div class="form-group">
@@ -23,4 +21,10 @@
   <%= f.submit class: 'btn btn-primary btn-lg' %> 
   
   <% end %>
+
+
+<%= month_calendar(attribute: :start_date, end_attribute: :end_date) do |date| %>
+  <%= date.day %>
+<% end %>
+
 
