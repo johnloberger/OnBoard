@@ -1,5 +1,9 @@
 <p class="display-1">Schedule A New Visit</p>
 
+<%= month_calendar(attribute: :start_date, end_attribute: :end_date) do |date| %>
+  <%= date.day %>
+<% end %>
+
 <%= form_for @visit do |f| %>
   <div class="form-group">
   <%= f.label 'Pet', class: 'form-text text-muted'%>

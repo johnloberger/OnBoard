@@ -1,13 +1,11 @@
-<h1 class="display-1">Kennels</h1>
-<%= link_to "Back", kennel_owner_user_path(@owner), class: 'btn btn-primary btn-lg' %>
-<br>
-<br>
-<%= link_to "Add kennel", kennel_owner_user_new_kennel_path, class: 'btn btn-primary btn-lg' %>
+<h1 class="display-1">Your Kennels</h1>
+<%= link_to "Back", kennel_owner_user_path(@owner), class: 'btn btn-info btn-sm' %>
+<%= link_to "Add kennel", kennel_owner_user_new_kennel_path, class: 'btn btn-outline-success btn-sm' %>
 <br>
 
 <hr>
 <% @kennels.each do |kennel| %>
- <%= link_to kennel.name, kennel_owner_user_kennel_path(kennel), class: 'btn btn-info btn-lg' %>
+ <%= link_to kennel.name, kennel_owner_user_kennel_path(kennel), class: 'btn btn-success btn-lg' %>
  <br>
  <br>
 <% end %>
