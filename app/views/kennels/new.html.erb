@@ -1,6 +1,12 @@
 <p class="display-4">Add Kennel</p>
 <hr>
 
+<% if flash[:kennel_errors] %>
+  <% flash[:kennel_errors].each do |error| %>
+    <p style='color: red;'><%= error %></p>
+  <% end %>
+<% end %>
+
 <%= form_for @kennel do |f| %>
   <div class="form-group">
   <%= f.label :name, class: 'form-text text-muted'%>

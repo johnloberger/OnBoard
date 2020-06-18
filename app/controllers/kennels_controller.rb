@@ -5,9 +5,17 @@ class KennelsController < ApplicationController
   end
   
   def create
-    @kennel = Kennel.create(kennel_params)
-    create_dens
-    redirect_to kennel_owner_user_kennel_path(@kennel)
+    @kennel = Kennel.new(kennel_params)
+
+    if @kennel.valid?
+      @kennel.save
+      create_dens
+      redirect_to kennel_owner_user_kennel_path(@kennel)
+    else
+      flash[:kennel_errors] = @kennel.errors.full_messages
+      redirect_to kennel_owner_user_new_kennel_path(@user)
+    end
+
   end
   
   def create_dens

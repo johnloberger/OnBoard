@@ -15,12 +15,19 @@ class PetsController < ApplicationController
 
   def create
     current_user
-    @pet = Pet.create(pet_params)
-    redirect_to customer_user_pet_path(@pet)
+    @pet = Pet.new(pet_params)
+
+    if @pet.valid?
+      @pet.save
+      redirect_to customer_user_pet_path(@pet)
+    else
+      flash[:pet_errors] = @pet.errors.full_messages
+      redirect_to customer_user_new_pet_path(@user)
+    end
+
   end 
 
   def update
-    current_user
     @pet.update(pet_params)
     redirect_to customer_user_pet_path(@pet)
   end
